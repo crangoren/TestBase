@@ -1,4 +1,4 @@
-package org.example.pages.base.realt_home;
+package org.example.pages.realt_home;
 
 import org.example.pages.base.BasePage;
 import org.openqa.selenium.By;

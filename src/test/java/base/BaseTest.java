@@ -2,7 +2,8 @@ package base;
 
 import org.example.common.CommonActions;
 import org.example.pages.base.BasePage;
-import org.example.pages.base.realt_home.RealtHomePage;
+import org.example.pages.listing.RealtListingPage;
+import org.example.pages.realt_home.RealtHomePage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
@@ -15,15 +16,16 @@ public class BaseTest {
     protected WebDriver driver = CommonActions.createDriver();
     protected BasePage basePage = new BasePage(driver);
     protected RealtHomePage realtHomePage = new RealtHomePage(driver);
+    protected RealtListingPage realtListingPage = new RealtListingPage(driver);
 
-    @AfterTest
-    public void clearCookiesAndLocalStorage(){
-        if(CLEAR_COOKIES_AND_STORAGE) {
-            JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
-            driver.manage().deleteAllCookies();
-            javascriptExecutor.executeScript("window.sessionStorage.clear");
-        }
-    }
+//    @AfterTest
+//    public void clearCookiesAndLocalStorage(){
+//        if(CLEAR_COOKIES_AND_STORAGE) {
+//            JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+//            driver.manage().deleteAllCookies();
+//            javascriptExecutor.executeScript("window.sessionStorage.clear()");
+//        }
+//    }
 
     @AfterSuite (alwaysRun = true)
     public void close() {
